@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html
+        data-th-replace="~{layouts/default-layout :: layout(
+					titrePage=~{:: title},
+					mainContent=~{:: main},
+					ressourcesSupp=~{::#css})}">
+<head>
+    <th:block id="css">
+        <link rel="stylesheet" type="text/css" href="/css/login.css">
+    </th:block>
+    <title>Login page</title>
+</head>
+<body>
+    <main>
+        <div class="login_container">
+            <h1>Bonjour !</h1>
+            <p>Connectez-vous pour découvrir toutes nos fonctionnalités.</p>
+<!--            <p data-th-text="${#ctx.session.currentUser != null} ? ${#ctx.session.currentUser} : 'Non connecté!'"/>-->
+            <form th:action="@{/login}" method="post">
+                <div class="username_input">
+                    <label for="username">Nom d'utilisateur *</label>
+                    <input type="text" id="username" name="username" autofocus="autofocus" /> <br />
+                </div>
+                <div class="password_input">
+                    <label for="password">Mot de passe *</label>
+                    <input type="password" id="password" name="password" />
+                    <span id="togglePasswordVisibility" class="password-view-icon"></span>
+                    <a href="#" class="forget_password">Mot de passe oublié</a>
+                </div>
+
+
+                <input type="submit" class="sub" value="Se connecter" />
+            </form>
+            <p class="login_account">Envie de nous rejoindre ? <a href="/register">Creer un compte!</a></p>
+        </div>
+
+        <script src="/js/login.js"></script>
+    </main>
+</body>
+</html>

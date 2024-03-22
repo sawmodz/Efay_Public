@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" data-th-fragment="layout(titrePage, mainContent, ressourcesSupp)">
+<head>
+    <meta charset="UTF-8">
+    <title data-th-replace="${titrePage}">Default</title>
+
+    <link rel="stylesheet" data-th-href="@{/css/navbar.css}">
+    <link rel="stylesheet" data-th-href="@{/css/cheat.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <th:block data-th-replace="${ressourcesSupp} ?: ~{}"></th:block>
+</head>
+<body>
+<!-- Intégration du fragment d'entête -->
+<div data-th-replace="~{fragments/navbar :: navbar}"></div>
+<div data-th-replace="~{fragments/cheat :: cheat}"></div>
+
+<!-- Rendre variable le contenu de la page -->
+<main data-th-replace="${mainContent} ?: ~{}">Contenu de la page
+</main>
+</body>
+</html>

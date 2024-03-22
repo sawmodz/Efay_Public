@@ -1,0 +1,45 @@
+<html data-th-replace="~{layouts/default-layout :: layout(
+					titrePage=~{:: title},
+					mainContent=~{:: #main},
+					ressourcesSupp=~{:: #css})}">
+
+<head>
+    <th:block id="css">
+        <link rel="stylesheet" type="text/css" href="/css/product.css">
+    </th:block>
+    <title>Afficher un produit</title>
+</head>
+<body>
+    <main id="main">
+        <div class="left">
+            <img data-th-src="@{'/img/upload/' + ${product.image_id.image_id} + '.jpg'}" alt="product image">
+            <h2 data-th-text="${product.name}"></h2>
+            <p class="city">Rennes • 35000 • Aujourd’hui a 15h09</p>
+            <h4 data-th-text="${product.price}+'&euro;'"></h4>
+            <h3>Description</h3>
+            <p class="description" data-th-text="${product.description}"></p>
+        </div>
+        <div class="right">
+            <a data-th-href="@{'/user/' + ${product.user_id.username}}" class="seller_account">
+                <div class="right_top">
+                    <img data-th-src="@{'https://ui-avatars.com/api/?name=' + ${product.user_id.username}}"
+                         alt="User image">
+                    <div class="infos">
+                        <h2 data-th-text="${product.user_id.name}+ ' '+ ${product.user_id.surname}"></h2>
+                        <p class="avis">5 <img class="star_img" src="/img/star.png" alt="star image"> (67)</p>
+                        <p class="post" data-th-text="${nbProductsAvailable > 1} ? ${nbProductsAvailable} + ' Annonces postées' : ${nbProductsAvailable} + ' Annonce postée'"></p>
+                    </div>
+                </div>
+            </a>
+            <div class="right_bottom">
+                <img src="/img/upload/19.png" alt="pub">
+            </div>
+            <span class="subButton">
+                <button data-th-if="${product.getState().toString() == 'Available'}" class="button" type="button" name="buy" value="ACHETER">
+                    <a data-th-href="@{'/product/buy/' + ${product.product_id}}">ACHETER</a>
+                </button>
+            </span>
+        </div>
+    </main>
+</body>
+</html>

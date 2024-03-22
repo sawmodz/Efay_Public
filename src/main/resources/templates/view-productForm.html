@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html
+        data-th-replace="~{layouts/default-layout :: layout(
+					titrePage=~{:: title},
+					mainContent=~{:: main},
+					ressourcesSupp=~{::#css})}">
+<head>
+    <th:block id="css">
+        <link rel="stylesheet" type="text/css" href="/css/productForm.css">
+    </th:block>
+    <title>Créer une annonce</title>
+</head>
+<body>
+<main>
+    <div class="product_container">
+        <h1>Creer une annonce</h1>
+        <form th:action="@{/product/create}" method="post" enctype="multipart/form-data">
+            <div class="product_name--input">
+                <label for="product_name">Nom de l'annonce</label>
+                <input type="text" id="product_name" name="product_name" autofocus="autofocus" />
+            </div>
+            <div class="container_category_price">
+                <div class="product_category--input">
+                    <label for="product_category">Categorie</label>
+                    <select name="product_category" id="product_category">
+                        <option data-th-each="category : ${categories}" data-th-text="${category.name}" data-th-value="${category.category_id}">Aucune sélectionné</option>
+                    </select>
+                </div>
+                <div class="product_price--input">
+                    <label for="product_price">Prix</label>
+                    <input id="product_price" type="number" name="product_price" value="0" />
+                </div>
+            </div>
+            <div class="container_description_pictures">
+                <div class="product_description--input">
+                    <label for="product_description">Description</label>
+                    <textarea id="product_description" name="product_description" rows="5" cols="33"></textarea>
+                </div>
+                <div class="product_pictures--input">
+                    <label for="product_pictures">Image</label>
+                    <input id="product_pictures" type="file" name="product_pictures" accept="image/*" capture>
+                </div>
+            </div>
+
+            <div class="btn_sub">
+                <input type="submit" class="sub" value="Creer l'annonce" />
+            </div>
+
+        </form>
+    </div>
+
+<!--    <script src="/js/login.js"></script>-->
+</main>
+</body>
+</html>

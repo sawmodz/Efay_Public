@@ -1,0 +1,69 @@
+.cheat{
+    width: 250px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background-color: rgba(161, 161, 161, 0.9);
+}
+
+.cheat_header, .cheat_footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    width: 100%;
+    background-color: aqua;
+}
+
+.cheat_footer{
+    flex-direction: column;
+}
+
+.cheat_header > h2, .cheat_footer > h4 {
+    font-size: 1.5em;
+    color: white;
+    font-family: "Inter", Helvetica, serif;
+    text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
+    1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+}
+
+.cheat_footer > h4{
+    font-size: 1em;
+}
+
+.cheat_menu_list{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.cheat_menu_list > li{
+    font-family: Inter, serif;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.cheat_menu_list > li:hover {
+    background-color: rgba(161, 161, 161, 0.9);
+}
+
+.cheat_menu_list > li a{
+    color: white;
+    text-decoration: none;
+}
+
+.userInformation{
+    margin-top: 10px;
+}
+
+.userInformation > p{
+    margin: 0;
+    color: white;
+    font-family: Inter, serif;
+    text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
+    1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+}

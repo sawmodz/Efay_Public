@@ -1,0 +1,31 @@
+<script src="../../static/js/cheat.js"></script>
+<div xmlns:th="http://www.thymeleaf.org" data-th-fragment="cheat" class="cheat" id="cheat" style="display: none;" data-th-if="${currentUser.getUsername() != null and currentUser.getRole() == 'ADMIN'}">
+    <div class="cheat_header">
+        <h2>EFAY MODE MENU</h2>
+    </div>
+    <div class="cheat_menu">
+        <ul class="cheat_menu_list" data-th-if="${currentURL != null and currentURL == 'userView'}">
+            <li id="deleteUser" class="cheat_menu_item"><a href="#">Supprimer l'utilisateur</a></li>
+            <li id="giveMoney" class="cheat_menu_item"><a href="#">Donner de l'argent</a></li>
+            <li id="removeMoney" class="cheat_menu_item"><a href="#">Retirer de l'argent</a></li>
+            <li id="addAdmin" class="cheat_menu_item"><a href="#">Mettre admin</a></li>
+            <li id="removeAdmin" class="cheat_menu_item"><a href="#">Enlever admin</a></li>
+        </ul>
+        <ul class="cheat_menu_list" data-th-if="${currentURL != null and currentURL == 'productView'}">
+            <li id="deleteOffer" class="cheat_menu_item"><a href="#">Supprimer l'offre</a></li>
+            <li id="changeToSell" class="cheat_menu_item"><a href="#">Mettre l'offre en vendu</a></li>
+            <li id="changeToAvailable" class="cheat_menu_item"><a href="#">Reactiver l'offre</a></li>
+        </ul>
+        <ul class="cheat_menu_list" data-th-if="${currentURL == null}">
+            <li  class="cheat_menu_item"><a href="#">Aucun</a></li>
+        </ul>
+    </div>
+    <div class="cheat_footer">
+        <div class="userInformation" data-th-if="${currentURL != null and currentURL == 'userView'}">
+            <p data-th-text="'username : ' + ${user.getUsername()}"></p>
+            <p data-th-text="'sold : ' + ${user.getSold()}"></p>
+        </div>
+        <h4>Moderation Menu V1</h4>
+    </div>
+    <script src="/js/cheat.js"></script>
+</div>

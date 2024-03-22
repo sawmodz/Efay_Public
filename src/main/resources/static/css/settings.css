@@ -1,0 +1,241 @@
+
+.main.center-main{
+    font-family: "Inter", Helvetica;
+}
+
+.top_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    font-family: "Inter", Helvetica;
+}
+
+.container{
+    width: 70%;
+    max-width: 1019px;
+    border: 1px solid #A1A1A1;
+    border-radius: 20px;
+    margin: 2rem 1rem 2rem 2rem;
+}
+
+.top_container--right{
+    width: 30%;
+    border: 1px solid #A1A1A1;
+    border-radius: 20px;
+    margin: 2rem 2rem 2rem 1rem;
+    padding: 0.5rem 2rem;
+}
+
+.top_container--right > p{
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.top_container--catCoins{
+    display: flex;
+    gap: 0.5rem;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.right.information{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.right.information img{
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+.top{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 30px;
+    font-family: Inter;
+}
+
+.top a{
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    color: #333333;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 21px;
+}
+
+.top a:hover{
+    color: #FC9E30;
+}
+
+.avatar{
+    margin-right: 35px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.star{
+    width: 100%;
+}
+
+.star p{
+    margin: 0;
+}
+
+p.username{
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.bottomContainer{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 7rem;
+    font-family: "Inter", Helvetica;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.bottomContainer img{
+    border-bottom-left-radius: 19px;
+    border-top-left-radius: 19px;
+    height: 100%;
+    width: 35%;
+    object-fit: cover;
+}
+
+.bottomContainer .mainProduct{
+    width: 100%;
+    padding: 0.35rem;
+    display: flex;
+    padding: 0.35rem;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.bottomContainer > div{
+    flex: 1;
+    max-height: 540px;
+    border: 1px solid #A1A1A1;
+    border-radius: 30px;
+    padding: 32px;
+}
+
+.upFormProfil{
+    margin: 0 0 0 2rem;
+}
+
+.histo_vente{
+    margin: 0 2rem 0 0;
+}
+
+.upFormProfil{
+    max-height: 540px;
+    border: 1px solid #A1A1A1;
+    border-radius: 30px;
+    padding: 32px;
+}
+
+.upFormProfil form{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.upFormProfil form label{
+    font-size: 20px;
+}
+
+.upFormProfil form input{
+    height: 4rem;
+    border-radius: 9px;
+    margin-top: 0.5rem;
+    padding-left: 0.5rem;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.upFormProfil form h2{
+    font-weight: 600;
+}
+
+.upFormProfil form .username_username--input,
+.upFormProfil form .username_email--input,
+.upFormProfil form .username_address--input{
+    display: flex;
+    flex-direction: column;
+}
+
+.subSetting{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+}
+
+.subSetting input{
+    border: none;
+    color: #FFFFFF;
+    width: 10rem;
+    background-color: #26BC00;
+    border-radius: 50px !important;
+    cursor: pointer;
+}
+
+.subSetting input:hover{
+    background-color: #00A86B;
+}
+
+.secondContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.secondContainer p.product_title,
+.secondContainer p.product_price{
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.secondContainer p.product_footer{
+    font-size: 12px;
+    margin-bottom: 0;
+    color: #A1A1A1;
+}
+
+.productSettings{
+    border: 1px solid #A1A1A1;
+    display: flex;
+    border-radius: 20px;
+    height: 110px;
+    margin-bottom: 20px;
+}
+
+.histo_achat{
+    overflow: auto;
+}
+
+.histo_achat::-webkit-scrollbar{
+    width: 8px;
+    height: 50%;
+}
+
+.histo_achat::-webkit-scrollbar-track {
+    background: #FFFFFF;
+}
+
+.histo_achat::-webkit-scrollbar-thumb {
+    border: 2px solid #FFFFFF;
+    border-radius: 30px;
+    background: #A1A1A1;
+}
+

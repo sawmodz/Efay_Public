@@ -1,0 +1,139 @@
+
+body{
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Inter;
+    height: calc(100% - 81px);
+}
+.login_container{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 9px 25px 0px rgba(0,0,0,0.8);
+    max-width: 502px;
+    height: fit-content;
+    padding: 2rem 2rem;
+    border-radius: 30px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1.3rem 0 1rem 0;
+}
+
+label{
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.sub{
+    background: #FC9E30;
+    width: 255px;
+    border-radius: 30px;
+    height: 3rem;
+    margin: 20px auto;
+    border: none;
+    font-size: 23px;
+    color: #FFFFFF;
+    transition: 0.2s;
+}
+.sub:hover{
+    background: #FFB55E;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.login_container h1{
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 0.8rem;
+}
+.login_container p{
+    margin-top: 0;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.username_input,
+.password_input{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.username_input input,
+.password_input input{
+    border-radius: 10px;
+    height: 2rem;
+    margin-top: 0.5rem;
+    border: 1px solid #A1A1A1;
+    font-size: 17px;
+    padding-left: 10px;
+    font-family: Inter;
+}
+
+.password-view-icon {
+    content: "";
+    display: inline-block;
+    width: 46px;
+    height: 34px;
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 363px;
+    background: url("/img/hide.png") no-repeat 0 0;
+    background-size: 28px 29px;
+    border-left: 1px solid #A1A1A1;
+    background-position: center;
+}
+.password-view-icon:hover{
+    cursor: pointer;
+}
+
+.login_account{
+    text-align: center;
+    font-size: 16px;
+}
+
+.login_container a{
+    text-decoration: none;
+    color: #333;
+}
+.login_container a:hover{
+    color: #FC9E30;
+    transition: 0.2s;
+}
+.forget_password{
+    font-size: 14px;
+    color: #A1A1A1 !important;
+    padding-top: 0.5rem;
+    width: fit-content;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.forget_password:hover{
+    color: #FC9E30 !important;
+}
+
+/*@media(max-width: 768px){*/
+/*    .login_container{*/
+/*        width: 60%;*/
+/*        max-width: initial;*/
+/*    }*/
+/*}*/
+
+/*@media(max-width: 425px){*/
+/*    .login_container{*/
+/*        width: 80%;*/
+/*        max-width: initial;*/
+/*    }*/
+/*}*/

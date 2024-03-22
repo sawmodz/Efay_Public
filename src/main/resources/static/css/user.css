@@ -1,0 +1,167 @@
+.center-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container{
+    box-shadow: 5px 9px 25px 0px rgba(0,0,0,0.08);
+    width: 1450px;
+    border-radius: 20px;
+    max-height: 350px;
+    margin-top: 45px;
+}
+
+.container > .top {
+    display: flex;
+    padding: 40px;
+    align-items: center;
+}
+
+.container > .top > img{
+    margin-right: 35px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.username{
+    font-size: 38px;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.selledItem{
+    color: #A1A1A1;
+    font-size: 20px;
+    margin: 0;
+}
+
+.bottom{
+    bottom: 0px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.bottom img{
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+.bottom > .left {
+    display: flex;
+    margin-left: 40px;
+}
+
+.bottom > .right {
+    margin-right: 40px;
+}
+
+.information{
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    font-size: 16px;
+}
+
+.bottomContainer{
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+    width: 1450px;
+}
+
+.bottomContainer > .left{
+    margin-left: 15px;
+    width: 50%;
+}
+
+.title_container{
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.product{
+    width: 95%;
+    border: 1px solid #A1A1A1;
+    display: flex;
+    border-radius: 20px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.product > img{
+    border-bottom-left-radius: 19px;
+    border-top-left-radius: 19px;
+    height: 100%;
+    width: 200px;
+}
+
+.mainProduct{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.secondContainer{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.secondContainer > p{
+    margin: 0;
+}
+
+.product_title{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.product_price{
+    font-size: 18px;
+    color: #00A86B;
+}
+
+.product_footer{
+    font-size: 12px;
+    color: #A1A1A1;
+    font-weight: bold;
+}
+
+.allProduct{
+    max-height: 260px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.product_a{
+    text-decoration: none;
+    color: black;
+}
+
+.logoutbutton{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: 100px;
+}
+
+.logoutbutton > a > img{
+    width: 35px;
+    height: 35px;
+}
+
+.settings{
+    margin-right: 20px;
+}

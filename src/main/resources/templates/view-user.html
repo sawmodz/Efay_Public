@@ -1,0 +1,77 @@
+<html
+        data-th-replace="~{layouts/default-layout :: layout(
+					titrePage=~{:: title},
+					mainContent=~{:: main},
+					ressourcesSupp=~{::#css})}">
+
+<head>
+    <title data-th-text="Efay"></title>
+    <th:block id="css">
+        <link rel="stylesheet" type="text/css" href="/css/user.css">
+    </th:block>
+</head>
+<body>
+<main class="center-main">
+    <div class="container">
+        <div class="top">
+            <img data-th-src="@{https://ui-avatars.com/api/?name={username}(username=${user.username})}" alt="Avatar" class="avatar">
+            <div>
+                <p class="username" data-th-text="${user.username}"></p>
+                <p class="selledItem" data-th-text="'A déja vendu '+ ${products != null? products.size():0} +' articles'"></p>
+            </div>
+
+            <div class="logoutbutton" data-th-if="${currentUser.getId()} == ${user.getId()}">
+                <a href="/settings" class="settings">
+                    <img src="/img/setting.png" alt="settings">
+                </a>
+                <a href="/logout">
+                    <img src="/img/logout.png" alt="logout">
+                </a>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <div class="left">
+                <div class="information">
+                    <img src="/img/drapeau.png" alt="">
+                    <p>Membres depuis Mai 2025</p>
+                </div>
+                <div class="information">
+                    <img src="/img/localisateur.png" alt="">
+                    <p>Est de l'ile de france</p>
+                </div>
+            </div>
+            <div class="right information">
+                <img src="/img/star.png" alt="">
+                <p data-th-text="'Noter ' + ${note} + ' sur ' + ${avis!= null? avis.size():0} + ' avis'"></p>
+            </div>
+        </div>
+    </div>
+    <div class="bottomContainer">
+        <div class="left">
+            <p class="title_container" data-th-text="'Produit en vente (' + ${productsAvailable!= null? productsAvailable.size():0} + ')'">Produit en vente (5)</p>
+            <div class="allProduct">
+                <a class="product_a" data-th-href="@{'/product/'+${myProduct.getProduct_id()}}" data-th-each="myProduct : ${productsAvailable}">
+                    <div class="product" >
+                        <img src="/img/upload/11.jpg" data-th-src="@{'/img/upload/' + ${myProduct.getImage_id().getImage_id()} + '.jpg'}" alt="icon">
+                        <div class="mainProduct">
+                            <div class="secondContainer">
+                                <p class="product_title" data-th-text="${myProduct.getName()}">Titre du produit</p>
+                                <p class="product_price" data-th-text="${myProduct.getPrice()} + ' €'"></p>
+                            </div>
+                            <div class="secondContainer">
+                                <p class="product_footer">Rennes 35000</p>
+                                <p class="product_footer">Aujourd'hui a 15h03</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="right">
+
+        </div>
+    </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<html
+        data-th-replace="~{layouts/default-layout :: layout(
+					titrePage=~{:: title},
+					mainContent=~{:: main},
+					ressourcesSupp=~{::#css})}">
+
+<head>
+    <title data-th-text="Efay"></title>
+    <th:block id="css">
+        <link rel="stylesheet" type="text/css" href="/css/logged.css" />
+    </th:block>
+    <link rel="stylesheet" href="../static/css/logged.css">
+</head>
+<body>
+<main class="center-main">
+    <div class="headerImage">
+        <h2>Le Market Place le plus sure !</h2>
+        <h3>Grâce à Efay Market Place, soyez sure de recevoir vos produit en belle et de la forme !</h3>
+    </div>
+
+    <p class="categoryTitle">Top 6 des catégories</p>
+    <p  data-th-text="${category}"></p>
+    <div class="categoryList">
+        <div class="category" data-th-each="category : ${categorys}">
+            <img data-th-src="@{/img/categorys/{icon}.png(icon=${category.getIcon()})}" alt="icon">
+            <p data-th-text="${category.getName()}"></p>
+        </div>
+    </div>
+
+    <p class="categoryTitle">Les annonces du moment</p>
+
+    <div class="productList">
+        <div class="product" data-th-each="product : ${products}">
+            <a href="#" th:href="@{'/product/' + ${product.getProduct_id()}}">
+                <div class="product_header">
+                    <img data-th-src="@{https://ui-avatars.com/api/?name={username}(username=${product.getUser_id().getUsername()})}" alt="Avatar" class="avatar">
+                    <p data-th-text="${product.getUser_id().getUsername()}"></p>
+                </div>
+                <img class="product_img" data-th-src="@{'/img/upload/' + ${product.getImage_id().getImage_id()} + '.jpg'}" alt="product">
+                <p class="product_name" data-th-text="${product.getName()}"></p>
+                <p class="product_price" data-th-text="${product.getPrice()} + ' €'"></p>
+            </a>
+        </div>
+
+    </div>
+    <script src="/js/logged.js"></script>
+</main>
+</body>
+</html>

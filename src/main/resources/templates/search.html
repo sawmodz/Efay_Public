@@ -1,0 +1,39 @@
+<html
+        data-th-replace="~{layouts/default-layout :: layout(
+					titrePage=~{:: title},
+					mainContent=~{:: main},
+					ressourcesSupp=~{:: #css})}">
+
+<head>
+    <th:block id="css">
+        <link rel="stylesheet" type="text/css" href="/css/user.css">
+        <link rel="stylesheet" type="text/css" href="/css/search.css">
+    </th:block>
+    <title data-th-text="Efay"></title>
+</head>
+<body>
+<main class="center-main">
+    <div class="title_container">
+        <h2 data-th-text="'Annonces &laquo; ' + ${search} + ' &raquo; : Toute la France'"></h2>
+        <p data-th-text="${products.size()} + ' annonces trouvé'"></p>
+    </div>
+    <div class="allProduct">
+        <a class="product_a" data-th-href="@{'/product/'+${myProduct.getProduct_id()}}" data-th-each="myProduct : ${products}">
+            <div class="product" >
+                <img src="/img/upload/11.jpg" data-th-src="@{'/img/upload/' + ${myProduct.getImage_id().getImage_id()} + '.jpg'}" alt="icon">
+                <div class="mainProduct">
+                    <div class="secondContainer">
+                        <p class="product_title" data-th-text="${myProduct.getName()}">Titre du produit</p>
+                        <p class="product_price" data-th-text="${myProduct.getPrice()} + ' €'">10 €</p>
+                    </div>
+                    <div class="secondContainer">
+                        <p class="product_footer">Rennes 35000</p>
+                        <p class="product_footer">Aujourd'hui a 15h03</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</main>
+</body>
+</html>

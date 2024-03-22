@@ -1,0 +1,96 @@
+nav {
+    width: 100%;
+    border-bottom: 1px solid #bdbdbd;
+    height: 80px;
+    background-color: white;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px;
+    height: 100%;
+}
+
+.title {
+    font-size: 35px;
+    font-family: "Jua", cursive;
+    color: #fc9e30;
+    margin-bottom: 3px;
+}
+
+.annonceButton {
+    width: 300px;
+    height: 45px;
+    background-color: #fc9e30;
+    border-radius: 39px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.annonceButton:hover {
+    background: #FFB55E;
+    transition: 0.2s;
+}
+
+.annonceButton > a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    font-family: "Inter", Helvetica;
+}
+
+.annonceButton:hover,
+.userIcon:hover {
+    cursor: pointer;
+}
+
+.recherche > input {
+    width: 686px;
+    height: 45px;
+    background-color: #f0f0f0;
+    border-radius: 39px;
+    border: none;
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+.loupe {
+    display: inline-block;
+    height: 28px;
+    width: 28px;
+    background: url("/img/loupe.png") no-repeat 0 0;
+    background-size: 28px 28px;
+    margin-left: -50px;
+    margin-bottom: -5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.userIcon {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+.title > a {
+    text-decoration: none;
+    font-size: 35px;
+    font-family: "Jua", cursive;
+    color: #fc9e30;
+    margin-bottom: 3px;
+}

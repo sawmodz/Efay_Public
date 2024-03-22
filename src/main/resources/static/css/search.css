@@ -1,0 +1,36 @@
+.allProduct{
+    width: 100%!important;
+    max-height: calc(100vh - 81px)!important;
+    overflow: unset!important;
+
+}
+
+.product{
+    width: 50%!important;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.title_container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.title_container > h2, .title_container > p{
+    margin:0;
+    font-family: Inter;
+    margin-left: 20px;
+}
+
+.title_container > h2{
+    margin-top: 20px;
+    font-size: 27px;
+}
+
+.title_container > p{
+    margin-top: 5px;
+    color: #A1A1A1;
+    font-size: 23px;
+}

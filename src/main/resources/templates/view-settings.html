@@ -1,0 +1,108 @@
+<html
+        data-th-replace="~{layouts/default-layout :: layout(
+					titrePage=~{:: title},
+					mainContent=~{:: main},
+					ressourcesSupp=~{::#css})}">
+
+<head>
+    <title data-th-text="Efay"></title>
+    <th:block id="css">
+        <link rel="stylesheet" type="text/css" href="/css/settings.css">
+    </th:block>
+    <link rel="stylesheet" href="../static/css/settings.css">
+</head>
+<body>
+<main class="center-main">
+    <div class="top_container">
+        <div class="container">
+            <div class="top">
+                <img data-th-src="@{https://ui-avatars.com/api/?name={username}(username=${currentUser.username})}" alt="Avatar" class="avatar">
+                <div class="star">
+                    <p class="username" data-th-text="${currentUser.username}"></p>
+                    <div class="right information">
+                        <img src="/img/star.png" alt="">
+                        <p data-th-text="'Noter ' + ${note} + ' sur ' + ${avis.size()} + ' avis'"></p>
+                    </div>
+                </div>
+                <a class="product_a" data-th-href="@{'/user/'+${currentUser.username}}">Accéder a mon profil public</a>
+            </div>
+        </div>
+        <div class="top_container--right">
+            <p>Porte monnaie</p>
+            <div class="top_container--catCoins">
+                <p data-th-text="${currentUser.sold}"></p>
+                <p>CatCoins</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottomContainer">
+        <div class="upFormProfil">
+            <form th:action="@{/settings/update}" method="post">
+                <h2>Modifier ses informations</h2>
+                <div class="username_username--input">
+                    <label class="label-name"  for="username">Pseudo</label>
+                    <input type="text" id="username" name="username" autofocus="autofocus" data-th-value="${username}" required/> <br/>
+                </div>
+                <div class="username_email--input">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" autofocus="autofocus" data-th-value="${email}"/> <br />
+                </div>
+                <div class="username_address--input">
+
+                        <label for="address">Adresse</label>
+                        <input type="text" id="address" name="address" autofocus="autofocus" data-th-value="${address} != null ? ${address} : 'Aucune'"/> <br />
+
+
+                </div>
+                <div class="subSetting">
+                    <input type="submit" class="sub" value="Sauvegarder" />
+                </div>
+
+            </form>
+        </div>
+        <div class="histo_achat">
+            <h2>Historique d'achat</h2>
+            <!-- Affichage du nombre de produits dans l'historique -->
+            <p class="title_container" th:text="'Produit acheté (' + ${history.size()} + ')'">Produit acheté (0)</p>
+            <!-- Boucle sur chaque élément d'historique pour afficher les détails du produit -->
+            <div th:each="myProductAchat : ${history}" class="product_a" th:href="@{/product/{id}(id=${myProductAchat.product.product_id})}">
+                <div class="productSettings">
+                    <img src="/img/upload/11.jpg" data-th-src="@{'/img/upload/' + ${myProductAchat.product.getImage_id().getImage_id()} + '.jpg'}" alt="icon">
+                    <div class="mainProduct">
+                        <div class="secondContainer">
+                            <!-- Affichage du nom et du prix du produit -->
+                            <p class="product_title" th:text="${myProductAchat.product.name}">Titre du produit</p>
+                            <p class="product_price" th:text="${myProductAchat.product.price} + ' €'">10 €</p>
+                        </div>
+                        <div class="secondContainer">
+                            <p class="product_footer" data-th-text="${'Acheté le ' + myProductAchat.date}">Acheté le 09/02/2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="histo_vente">
+            <h2>Historique produit vendu</h2>
+            <!-- Affichage du nombre de produits dans l'historique -->
+            <p class="title_container" th:text="'Produit vendu (' + ${productSelled.size()} + ')'">Produit vendu (0)</p>
+            <div th:each="myProductSelled : ${productSelled}" class="product_a" th:href="@{/product/{id}(id=${myProductSelled.product_id})}">
+                <div class="productSettings">
+                    <img src="/img/upload/11.jpg" data-th-src="@{'/img/upload/' + ${myProductSelled.getImage_id().getImage_id()} + '.jpg'}" alt="icon">
+                    <div class="mainProduct">
+                        <div class="secondContainer">
+                            <!-- Affichage du nom et du prix du produit -->
+                            <p class="product_title" th:text="${myProductSelled.name}">Titre du produit</p>
+                            <p class="product_price" th:text="${myProductSelled.price} + ' €'">10 €</p>
+                        </div>
+                        <div class="secondContainer">
+                            <p class="product_footer">Vendu le 09/02/2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

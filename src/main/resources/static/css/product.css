@@ -1,0 +1,157 @@
+main{
+    width: 100%;
+    height: calc(100vh - 81px);
+    display: flex;
+    flex-direction: row;
+}   
+
+* {
+    font-family: Inter;
+}
+
+.left{
+    padding-left: 40px;
+    padding-top: 40px;
+    width: 50%;
+}
+
+.right{
+    padding-right: 40px;
+    padding-top: 0;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.right_top {
+    width: 750px;
+    height: 160px;
+    padding-left: 30px;
+    border-radius: 20px;
+    box-shadow: 5px 9px 25px 0 rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    transition: 0.2s;
+
+}
+
+.star_img {
+    width: 15px;
+    height: 15px;
+}
+
+.avis, .post {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.infos > h2, .avis, .post {
+    margin: 0;
+}
+
+.right_top > img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+.infos {
+    padding-left: 30px;
+}
+
+.right_bottom {
+    margin-top: 30px;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.right_bottom > img {
+    width: 400px;
+    height: 350px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.subButton>button {
+    width: 230px;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: #26BC00;
+    box-shadow: 5px 9px 25px 0 rgba(0,0,0,0.08);
+    border: none;
+    border-radius: 30px;
+    color: #f0f0f0;
+    font-size: 20px;
+}
+
+.subButton>button>a {
+    text-decoration: none;
+    color: #f0f0f0;
+}
+
+.subButton {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    transition: 0.2s;
+}
+
+.subButton>button:hover {
+    background: #00883F;
+    cursor: pointer;
+    transition: 0.2s;
+    border-radius: 20px;
+}
+
+.seller_account {
+    text-decoration: none;
+    color: black;
+}
+
+.seller_account:hover{
+    cursor: pointer;
+    box-shadow: 5px 9px 25px 0 rgba(0,0,0,0.1);
+    transition: 0.2s;
+}
+
+.left > img{
+    width: 700px;
+    height: 350px;
+}
+
+.left > h2, .left > h3{
+    font-weight: bold;
+    font-size: 27px;
+    max-width: 700px;
+    margin: 15px 0 0;
+}
+
+.left > .city {
+    color: #A1A1A1;
+    font-size: 13px;
+    margin: 0;
+}
+
+.left > h4{
+    color: #00883F;
+    font-size: 24px;
+    margin: 0;
+}
+
+.left > .description{
+ max-width: 700px;
+}
+
+.left > h3 {
+    margin-top: 10px!important;
+}

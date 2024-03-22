@@ -1,0 +1,22 @@
+<nav xmlns:th="http://www.thymeleaf.org" data-th-fragment="navbar">
+    <ul>
+        <li class="title"><a class="titlea" href="/">Efay market place</a></li>
+        <li>
+            <div class="annonceButton">
+                <a href="/product/create">Deposer une annonce</a>
+            </div>
+        </li>
+        <li>
+            <div class="recherche">
+                <input type="text" id="searchInput" placeholder="Rechercher" />
+                <a href="#" id="search" class="loupe"></a>
+            </div>
+
+        </li>
+        <li>
+            <a data-th-href="${currentUser.getUsername() == null} ? '/login' : @{/user/{username}(username=${currentUser.username})}"><img class="userIcon" data-th-src="${currentUser.getUsername() == null} ? '/img/user.png' : @{https://ui-avatars.com/api/?name={username}(username=${currentUser.username})}" alt="user" /></a>
+        </li>
+    </ul>
+
+    <script src="/js/navbar.js"></script>
+</nav>
